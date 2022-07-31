@@ -1,0 +1,6 @@
+/* Clases Proyecto */
+@media (min-width: 768px) { 
+  .local-grid-md {
+    grid: repeat(2, 1fr) / 55% calc(45% - 1rem);
+  }
+}
