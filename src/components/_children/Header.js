@@ -23,11 +23,9 @@ const SectionSubmit = () => {
 
 
   const [counter, setCounter] = useState(0);
-  //increase counter
   const addCounter = () => {
       setCounter(counter + 1);
   };
-  //reset counter 
   const resetCounter = () =>{
       setCounter(0)
   }
