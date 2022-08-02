@@ -5,22 +5,6 @@ import img1 from "../../img/BL-Evento2022-Desktop-11.png";
 import img2 from "../../img/BL-Evento2022-Mobile-11.png";
 
 const SectionSubmit = () => {
-  const [width, setWidth] = useState(window.innerWidth);
-  const [height, setHeight] = useState(window.innerHeight);
-
-  useEffect(() => {
-    window.addEventListener("resize", handleResize);
-
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
-
-  const handleResize = () => {
-    setWidth(window.innerWidth);
-    setHeight(window.innerHeight);
-  };
-
 
   const [counter, setCounter] = useState(0);
   const addCounter = () => {
@@ -38,23 +22,21 @@ const SectionSubmit = () => {
       }        
   }
     
-  setTimeout(counter2, 5000);
+  setTimeout(counter2, 800);
 
   return (
     <div className=" pt-14 pb-14 font-lato ">
       <div className=" w-full ">
-        {width <= 767
-        ?
-          <img className=" h-full w-full " loading="lazy" decoding="async" src={img2} lazyalt="imagen" />
-        :
-        <img
-          className=" h-full w-full "
-          loading="lazy"
-          decoding="async"
-          src="https://cloudfront-us-east-1.images.arcpublishing.com/bloomberglinea/D275ZYHF2FD5JINNHYPXQ2EJF4.png"
-          lazyalt="imagen"
-        />
-        }
+        <picture>
+          <img className=" h-full w-full md:hidden " loading="lazy" decoding="async" src={img2} lazyalt="imagen" />
+          <img
+            className=" hidden md:block md:h-full w-full "
+            loading="lazy"
+            decoding="async"
+            src="https://cloudfront-us-east-1.images.arcpublishing.com/bloomberglinea/D275ZYHF2FD5JINNHYPXQ2EJF4.png"
+            lazyalt="imagen"
+          />
+        </picture>
       </div>
       <div className=" w-full px-12 pt-10 text-center text-xl leading-6 md:text-2xl lg:text-3xl ">
         <p className=" pb-5 ">
